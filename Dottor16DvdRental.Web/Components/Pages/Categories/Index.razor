@@ -1,0 +1,21 @@
+﻿@page "/categories"
+@using Dottor16DvdRental.Web.models
+@using Dottor16DvdRental.Web.services.CategoriesServices
+
+@inject ICategoriesServices CategoriesServices
+
+<h3>Categorie</h3>
+
+@foreach(var a in _list)
+{
+    
+}
+
+@code {
+    private IEnumerable<Category> _list = [];
+
+    protected override async Task OnInitializedAsync()
+    {
+        _list = await CategoriesServices.GetCategoriesAsync();
+    }
+}

@@ -1,0 +1,28 @@
+﻿@page "/films/{id:int}"
+@using Dottor16DvdRental.Web.models
+@using Dottor16DvdRental.Web.services.FilmsServices
+
+@inject IFilmsServices FilmsService
+
+@if (_film is not null)
+{
+
+}
+else
+{
+    <p>Loading...</p>
+}
+
+<br />
+
+@code {
+    [Parameter]
+    public int FilmId { get; set; }
+
+    private Film? _film;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _film = await FilmsService.GetFilmByIdAsync(FilmId);
+    }
+}

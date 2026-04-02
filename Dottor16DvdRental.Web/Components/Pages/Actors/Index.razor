@@ -1,0 +1,32 @@
+﻿@page "/actors"
+@using Dottor16DvdRental.Web.models
+@using Dottor16DvdRental.Web.services.ActorsServices
+
+@inject IActorsServices ActorsServices
+@inject NavigationManager Navigation
+
+<h3>Attori</h3>
+
+<a href="actors/create" class="btn btn-primary mt-3 mb-3">Create new</a>
+
+<table class="table table-striped">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th></th>
+    </tr>
+    @foreach (var a in _list)
+    {
+        <ActorRow Actor="a" />
+    }
+</table>
+
+@code {
+    private IEnumerable<Actor> _list = [];
+
+    protected override async Task OnInitializedAsync()
+    {
+        _list = await ActorsServices.GetActorsAsync();
+    }
+}

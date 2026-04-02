@@ -1,0 +1,28 @@
+﻿@page "/categories/{id:int}"
+@using Dottor16DvdRental.Web.models
+@using Dottor16DvdRental.Web.services.CategoriesServices
+
+@inject ICategoriesServices CategoriesServices
+
+@if (_category is not null)
+{
+    
+}
+else
+{
+    <p>Loading...</p>
+}
+
+<br />
+
+@code {
+    [Parameter]
+    public int CategoryId { get; set; }
+
+    private Category? _category;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _category = await CategoriesServices.GetCategoryByIdAsync(CategoryId);
+    }
+}

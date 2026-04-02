@@ -1,0 +1,42 @@
+﻿@using Dottor16DvdRental.Web.models
+@using Dottor16DvdRental.Web.services.ActorsServices
+@inject IActorsServices ActorsServices
+@inject NavigationManager Nav
+@inject ILogger<ActorRow> Logger
+@inject IJSRuntime JS
+
+@if (Actor is not null)
+{
+    <tr>
+        <td>@Actor.Id</td>
+        <td>@Actor.FirstName</td>
+        <td>@Actor.LastName</td>
+        <td>
+            <a href="actors/@Actor.Id">details</a>
+            <a href="actors/update/@Actor.Id">edit</a>
+            <button type="button" class="btn btn-link" @onclick="async () => await DeleteActorAsync(Actor.Id)">Delete</button>
+        </td>
+    </tr>
+}
+
+@code {
+    [Parameter]
+    [EditorRequired]
+    public Actor Actor { get; set; } = default!;
+
+    private async Task DeleteActorAsync(int actorId)
+    {
+        bool confirmed = await JS.InvokeAsync<bool>("confirm", $"Are you sure you want to delete actor {Actor.FirstName} {Actor.LastName}?");
+        if (!confirmed) return;
+        try
+        {
+            await ActorsServices.DeleteActorAsync(actorId);
+            Nav.Refresh(true);
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Error occurred while deleting the actor.");
+            await JS.InvokeVoidAsync("alert", "An error occurred while deleting the actor. Please try again.");
+        }
+    }
+}

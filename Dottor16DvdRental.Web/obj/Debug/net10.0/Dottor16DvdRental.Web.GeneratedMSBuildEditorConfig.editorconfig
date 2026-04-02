@@ -1,0 +1,99 @@
+is_global = true
+build_property.TargetFramework = net10.0
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v10.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Dottor16DvdRental.Web
+build_property.RootNamespace = Dottor16DvdRental.Web
+build_property.ProjectDir = C:\Users\RickyMandich\PROJECT\Dottor16DvdRental.Web\Dottor16DvdRental.Web\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 9.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\RickyMandich\PROJECT\Dottor16DvdRental.Web\Dottor16DvdRental.Web
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 10.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/RickyMandich/PROJECT/Dottor16DvdRental.Web/Dottor16DvdRental.Web/Components/Actors/ActorRow.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBY3RvcnNcQWN0b3JSb3cucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RickyMandich/PROJECT/Dottor16DvdRental.Web/Dottor16DvdRental.Web/Components/App.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RickyMandich/PROJECT/Dottor16DvdRental.Web/Dottor16DvdRental.Web/Components/Films/FilmRow.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xGaWxtc1xGaWxtUm93LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RickyMandich/PROJECT/Dottor16DvdRental.Web/Dottor16DvdRental.Web/Components/Pages/Actors/Create.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBY3RvcnNcQ3JlYXRlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RickyMandich/PROJECT/Dottor16DvdRental.Web/Dottor16DvdRental.Web/Components/Pages/Actors/Details.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBY3RvcnNcRGV0YWlscy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RickyMandich/PROJECT/Dottor16DvdRental.Web/Dottor16DvdRental.Web/Components/Pages/Actors/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBY3RvcnNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RickyMandich/PROJECT/Dottor16DvdRental.Web/Dottor16DvdRental.Web/Components/Pages/Actors/Update.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBY3RvcnNcVXBkYXRlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RickyMandich/PROJECT/Dottor16DvdRental.Web/Dottor16DvdRental.Web/Components/Pages/Categories/Details.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDYXRlZ29yaWVzXERldGFpbHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RickyMandich/PROJECT/Dottor16DvdRental.Web/Dottor16DvdRental.Web/Components/Pages/Categories/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDYXRlZ29yaWVzXEluZGV4LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RickyMandich/PROJECT/Dottor16DvdRental.Web/Dottor16DvdRental.Web/Components/Pages/Error.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RickyMandich/PROJECT/Dottor16DvdRental.Web/Dottor16DvdRental.Web/Components/Pages/FIlms/Details.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGSWxtc1xEZXRhaWxzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RickyMandich/PROJECT/Dottor16DvdRental.Web/Dottor16DvdRental.Web/Components/Pages/FIlms/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGSWxtc1xJbmRleC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RickyMandich/PROJECT/Dottor16DvdRental.Web/Dottor16DvdRental.Web/Components/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RickyMandich/PROJECT/Dottor16DvdRental.Web/Dottor16DvdRental.Web/Components/Pages/NotFound.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xOb3RGb3VuZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RickyMandich/PROJECT/Dottor16DvdRental.Web/Dottor16DvdRental.Web/Components/Routes.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RickyMandich/PROJECT/Dottor16DvdRental.Web/Dottor16DvdRental.Web/Components/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/RickyMandich/PROJECT/Dottor16DvdRental.Web/Dottor16DvdRental.Web/Components/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-9u8f6hd90o
+
+[C:/Users/RickyMandich/PROJECT/Dottor16DvdRental.Web/Dottor16DvdRental.Web/Components/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-te2omoc3z5
+
+[C:/Users/RickyMandich/PROJECT/Dottor16DvdRental.Web/Dottor16DvdRental.Web/Components/Layout/ReconnectModal.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcUmVjb25uZWN0TW9kYWwucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-slycttkl0e

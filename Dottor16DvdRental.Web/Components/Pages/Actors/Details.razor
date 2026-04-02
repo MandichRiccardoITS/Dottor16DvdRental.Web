@@ -1,0 +1,38 @@
+﻿@page "/actors/{id:int}"
+@using Dottor16DvdRental.Web.services.ActorsServices
+@using Dottor16DvdRental.Web.models
+
+@inject IActorsServices ActorService
+
+@if (_actor is not null)
+{
+	<h3>
+		@_actor.FirstName @_actor.LastName
+	</h3>
+	<p>
+		Id: <strong>@_actor.Id</strong>
+		Last Update: <strong>@_actor.LastUpdate</strong>
+	</p>
+}
+else
+{
+	<p>loading...</p>
+}
+
+<hr />
+
+<a href="actors">go to list</a>
+
+<h3>Details</h3>
+
+@code {
+	[Parameter]
+	public int Id { get; set; }
+
+	private Actor? _actor;
+
+	protected override async Task OnInitializedAsync()
+	{
+		_actor = await ActorService.GetActorByIdAsync(Id);
+	}
+}

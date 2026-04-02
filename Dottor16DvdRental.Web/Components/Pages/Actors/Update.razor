@@ -1,0 +1,90 @@
+﻿@page "/actors/update/{id:int}"
+@using Dottor16DvdRental.Web.services.ActorsServices
+@inject IActorsServices ActorsServices
+@inject NavigationManager Nav
+@inject ILogger<Update> Logger
+@inject IJSRuntime JS
+
+<h3>Update an Actor</h3>
+
+@if (!string.IsNullOrWhiteSpace(_errorMessage))
+{
+    <div class="alert alert-danger mb-2" role="alert">
+        @_errorMessage
+    </div>
+}
+
+@if(_newActor is not null)
+{
+<EditForm Model="_newActor" OnValidSubmit="InsertActorAsync">
+    <DataAnnotationsValidator />
+
+    <ValidationSummary class="border rounded border-danger bg-danger-subtle" />
+
+    <label for="txtName">First Name</label>
+    <InputText @bind-Value="_newActor.FirstName"
+                id="txtName"
+                class="form-control" />
+    <label for="txtSurname">Surname</label>
+    <InputText @bind-Value="_newActor.LastName" id="txtSurname"
+                class="form-control" />
+    <button type="submit" class="btn btn-primary mt-2">Save</button>
+    <a href="/actors" class="btn btn-secondary mt-2">Undo</a>
+    <button type="button" class="btn btn-danger mt-2" @onclick="DeleteActorAsync">Delete</button>
+
+
+</EditForm>
+}
+
+@code {
+    private Actor? _newActor;
+    private string? _errorMessage;
+    [Parameter]
+    public int id { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            _newActor = await ActorsServices.GetActorByIdAsync(id);
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Error occurred while loading the actor.");
+            _errorMessage = "An error occurred while loading the actor. Please try again.";
+        }
+    }
+
+    private async Task InsertActorAsync()
+    {
+        try
+        {
+            await ActorsServices.InsertActorAsync(_newActor);
+            Nav.NavigateTo("/actors");
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Error occurred while saving the actor.");
+            _errorMessage = "An error occurred while saving the actor. Please try again.";
+        }
+    }
+
+    private async Task DeleteActorAsync()
+    {
+        bool ok = await JS.InvokeAsync<bool>("confirm", "sei sicuro di voler cancellare l'attore?");
+        if (!ok)
+        {
+            return;
+        }
+        try
+        {
+            await ActorsServices.DeleteActorAsync(_newActor!.Id);
+            Nav.NavigateTo("/actors");
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Error occurred while deleting the actor.");
+            _errorMessage = "An error occurred while deleting the actor. Please try again.";
+        }
+    }
+}

@@ -1,0 +1,27 @@
+﻿@page "/films"
+@using Dottor16DvdRental.Web.Components.Films
+@using Dottor16DvdRental.Web.models
+@using Dottor16DvdRental.Web.services.FilmsServices
+
+@inject IFilmsServices FilmsServices
+
+<h3>Film</h3>
+
+<table>
+    <thead>
+
+    </thead>
+    @foreach (var film in _list)
+    {
+        <FilmRow Film="film" />
+    }
+</table>
+
+@code {
+    private IEnumerable<Film> _list = [];
+
+    protected override async Task OnInitializedAsync()
+    {
+        _list = await FilmsServices.GetFilmsAsync();
+    }
+}

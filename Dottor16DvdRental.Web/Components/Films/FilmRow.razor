@@ -1,0 +1,55 @@
+﻿@using Dottor16DvdRental.Web.models
+@using Dottor16DvdRental.Web.services.FilmsServices
+@inject IFilmsServices FilmsService
+@inject NavigationManager Nav
+@inject ILogger<FilmRow> Logger
+@inject IJSRuntime JS
+
+@if (Film is not null)
+{
+    <tr>
+        <td>@Film.FilmId</td>
+        <td>@Film.Title</td>
+        <td>@Film.Description</td>
+        <td>@Film.ReleaseYear</td>
+        <td>@Film.RentalDuration</td>
+        <td>@Film.RentalRate</td>
+        <td>@Film.Length</td>
+        <td>@Film.ReplacementCost</td>
+        <td>@Film.Rating</td>
+        <td>@Film.LastUpdate</td>
+        <td>
+        @foreach (var specialFeature in Film.SpecialFeatures)
+        {
+                <span class="badge bg-secondary-subtle border border-secondary border-3 m-1">@specialFeature</span>
+        }
+        </td>
+        <td>
+            <a class="btn btn-primary" href="actors/@Film.FilmId">details</a>
+            <a class="btn btn-warning" href="actors/update/@Film.FilmId">edit</a>
+            <button type="button" class="btn btn-danger" @onclick="async () => await DeleteFilmAsync(Film.FilmId)">Delete</button>
+        </td>
+    </tr>
+}
+
+@code {
+    [Parameter]
+    [EditorRequired]
+    public Film Film { get; set; } = default!;
+
+    private async Task DeleteFilmAsync(int actorId)
+    {
+        bool confirmed = await JS.InvokeAsync<bool>("confirm", $"Are you sure you want to delete film {Film.Title}?");
+        if (!confirmed) return;
+        try
+        {
+            await FilmsService.DeleteFilmAsync(actorId);
+            Nav.Refresh(true);
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Error occurred while deleting the film.");
+            await JS.InvokeVoidAsync("alert", "An error occurred while deleting the film. Please try again.");
+        }
+    }
+}
